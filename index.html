@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
     <title>Document</title>
 </head>
 <body>
-    <h2>hi</h2>
+    <!-- start button/title -->
+    <section classs="quiz-start" id="start">
+        <h3 class="quiz-title">Joe's Quiz</h3>
+        <button class="button" id="button-start">Start</button>
+        
+    </section>
+    <!-- quiz questions -->
+    <section class="quiz-questions" id="qsection">
+        <h2 id="question-content"></h2>
+        <div id="questions">
+            <div>
+                <button class="answer" id="answer1"></button>
+                <button class="answer" id="answer2"></button>
+                <button class="answer" id="answer3"></button>
+                <button class="answer" id="answer4"></button>
+            </div>
+        </div>
+    </section>
+    <!-- quiz end -->
+    <section class="quiz-end" id="quiz-end">
+        <label class="form-label" for="username">Username</label>
+        <input name="username" id="user-initials" type="text" class="form-input" />
+        <button type="submit" class="btn">submit</button>
+    </section>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
