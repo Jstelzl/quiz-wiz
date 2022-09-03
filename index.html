@@ -6,33 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    <title>Document</title>
+    <title>Quiz Wiz</title>
 </head>
 <body>
-    <!-- start button/title -->
-    <section classs="quiz-start" id="start">
-        <h3 class="quiz-title">Joe's Quiz</h3>
-        <button class="button" id="button-start">Start</button>
-        
-    </section>
-    <!-- quiz questions -->
-    <section class="quiz-questions" id="qsection">
-        <h2 id="question-content"></h2>
-        <div id="questions">
+    <form class="quiz-form">
+        <!-- start button/title -->
+        <section class="quiz-start" id="start">
+            <h3 class="quiz-title">Welcome to Quiz Wiz</h3>
+            <p>Ready to start? Click the red start button! You will have 10 seconds for each of the 4 questions!</p>
+            <button class="button" id="button-start">Start Quiz</button>
+            
+        </section>
+        <!-- quiz questions -->
+        <section class="quiz-questions"  id="qsection">
             <div>
-                <button class="answer" id="answer1"></button>
-                <button class="answer" id="answer2"></button>
-                <button class="answer" id="answer3"></button>
-                <button class="answer" id="answer4"></button>
+                T Minus:
+                <div id="clock"></div>
             </div>
-        </div>
-    </section>
-    <!-- quiz end -->
-    <section class="quiz-end" id="quiz-end">
-        <label class="form-label" for="username">Username</label>
-        <input name="username" id="user-initials" type="text" class="form-input" />
-        <button type="submit" class="btn">submit</button>
-    </section>
-    <script src="./assets/js/script.js"></script>
+            <h2 id="question-title">Questions</h2>
+            <div id="questions-container">
+                <div>
+                    <button class="answer" id="answer1"></button>
+                    <button class="answer" id="answer2"></button>
+                    <button class="answer" id="answer3"></button>
+                    <button class="answer" id="answer4"></button>
+                </div>
+            </div> 
+        </section>
+        <!-- quiz end -->
+        <section class="quiz-end" id="quiz-end">
+            <input name="username" id="user-initials" type="text" placeholder="Enter initials" class="form-input" />
+            <button id="submit-name" type="submit" class="btn">Submit</button>
+            <p id="user-score"></p>
+        </section>
+        <script src="./assets/js/script.js"></script>
+    <form>
 </body>
 </html>

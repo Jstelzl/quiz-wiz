@@ -1,0 +1,55 @@
+
+.quiz-form {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+
+.quiz-questions {
+    display: block;
+    text-align: center;
+    padding: 0px 20px 20px 20px;
+    
+    
+}
+
+.quiz-start {
+    display: block;
+    text-align: center;
+    background-color: yellow;
+}
+
+.quiz-questions, .quiz-end {
+    background-color: blue;
+    padding: 40px;
+}
+
+.quiz-end {
+    display: block;
+    text-align: center;
+}
+
+#questions button {
+    display: inline-block;
+    margin: 5px;
+}
+
+.button {
+    background-color: red;
+    color: white;
+}
+
+.btn {
+    background-color: yellow;
+    color: blue;
+    height: 44px;
+    width: 75px;
+}
+
+.form-input {
+    height: 20px;
+    width: 250px;
+    padding: 10px;
+}
+
