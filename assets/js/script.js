@@ -48,7 +48,18 @@ var questions = [
 ];
 
 //start the quiz sections
-function initiateQuiz() {
+function initiateQuiz(event) {
+    start.style.disply = "none";
+    qsection.style.display = "block";
+    quizEnd.style.display = "none";
+    questionIndex = 0;
+    userScore = 0;
+    var timer = setTimer();
+    questionDisplay();
+    event.preventDefault();
+}
+
+function questionForm(event) {
     start.style.disply = "none";
     qsection.style.display = "block";
     quizEnd.style.display = "none";
@@ -69,6 +80,7 @@ function questionDisplay() {
     console.log(answer1);
     event.preventDefault();
 }
+
 
 
 // confirms if questions are answered correctly or not
@@ -96,14 +108,21 @@ function answerConfirm(event) {
 function endGame() {
     start.style.display = "none";
     quizEnd.style.display = "block";
-    document.getElementById("user-score").textContent =
-    "Your Score Was " + userScore;
+    qsection.style.display = "none";
+    // document.getElementById("user-score").textContent =
+    // "Your Score Was " + userScore;
     event.preventDefault();
 }
 
-// function finalScreen() {
-    
-// }
+function finalScreen(event) {
+    start.style.display = "none";
+    quizEnd.style.display = "none";
+    qsection.style.display = "none";
+    userInitials.style.display = "block";
+    document.getElementById("user-score").textContent = submitUserName + userInitials + "Your Score Was " + userScore;
+    event.preventDefault();
+    //return submitUserName + userInitials;
+}
 
 //timer
 function setTimer() {
@@ -123,4 +142,4 @@ function setTimer() {
 
 buttonStart.addEventListener("click", initiateQuiz);
 qsection.addEventListener("click", answerConfirm);
-submitUserName.addEventListener("click", endGame);
+submitUserName.addEventListener("click", finalScreen);
