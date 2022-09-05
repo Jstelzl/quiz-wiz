@@ -1,7 +1,7 @@
 // Ids
 
 var bodyEl = document.querySelectorAll("body");
-var start = document.getElementById("start");
+var start = document.getElementById("start-quiz");
 var qsection = document.getElementById("qsection");
 var questionTitle = document.getElementById("question-title");
 var buttonStart = document.getElementById("button-start");
@@ -15,7 +15,7 @@ var quizEnd = document.getElementById("quiz-end");
 var userInitials = document.getElementById("user-initials");
 var questionContent = document.getElementById("question-content");
 var clock = document.getElementById("clock");
-var submitUserName = document.getElementById("submit-username");
+var submitUserName = document.getElementById("submit-name");
 var questionIndex;
 var userScore;
 var secondsLeft = 40;
@@ -49,13 +49,14 @@ var questions = [
 
 //start the quiz sections
 function initiateQuiz() {
-    start.style.disply = "block";
+    start.style.disply = "none";
     qsection.style.display = "block";
-    quizEnd.style.display = "block";
+    quizEnd.style.display = "none";
     questionIndex = 0;
     userScore = 0;
     var timer = setTimer();
     questionDisplay();
+    event.preventDefault();
 }
 
 // show questions/options on page
@@ -66,6 +67,7 @@ function questionDisplay() {
     answer3.textContent = questions[questionIndex].options[2];
     answer4.textContent = questions[questionIndex].options[3];
     console.log(answer1);
+    event.preventDefault();
 }
 
 
@@ -92,18 +94,16 @@ function answerConfirm(event) {
 }
 //change display from questions to score
 function endGame() {
-    start.style.display = "block";
-    qsection.style.display = "block";
+    start.style.display = "none";
     quizEnd.style.display = "block";
     document.getElementById("user-score").textContent =
     "Your Score Was " + userScore;
+    event.preventDefault();
 }
 
-function finalScreen() {
-    start.style.display = "block";
-    qsection.style.display = "block";
-    quizEnd.style.display = "block";
-}
+// function finalScreen() {
+    
+// }
 
 //timer
 function setTimer() {
@@ -123,4 +123,4 @@ function setTimer() {
 
 buttonStart.addEventListener("click", initiateQuiz);
 qsection.addEventListener("click", answerConfirm);
-//submitUserName.addEventListener("click", endGame);
+submitUserName.addEventListener("click", endGame);
