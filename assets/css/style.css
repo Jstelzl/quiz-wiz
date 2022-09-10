@@ -6,6 +6,11 @@
     padding: 10px;
 }
 
+.answer {
+    background-color: red;
+    color: white;
+}
+
 .quiz-questions {
     display: block;
     text-align: center;

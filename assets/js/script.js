@@ -12,12 +12,12 @@ var answer2 = document.getElementById("answer2");
 var answer3 = document.getElementById("answer3");
 var answer4 = document.getElementById("answer4");
 var quizEnd = document.getElementById("quiz-end");
-var userInitials = document.getElementById("user-initials");
+//var userInitials = document.getElementById("user-initials");
 var questionContent = document.getElementById("question-content");
 var clock = document.getElementById("clock");
 var submitUserName = document.getElementById("submit-name");
 var questionIndex;
-var userScore;
+var userScore = document.getElementById("user-score");
 var secondsLeft = 40;
 
 
@@ -109,19 +109,21 @@ function endGame() {
     start.style.display = "none";
     quizEnd.style.display = "block";
     qsection.style.display = "none";
-    // document.getElementById("user-score").textContent =
-    // "Your Score Was " + userScore;
     event.preventDefault();
 }
 
-function finalScreen(event) {
+function finalScreen() {
     start.style.display = "none";
-    quizEnd.style.display = "none";
     qsection.style.display = "none";
     userInitials.style.display = "block";
     document.getElementById("user-score").textContent = submitUserName + userInitials + "Your Score Was " + userScore;
+    showInitils();
     event.preventDefault();
-    //return submitUserName + userInitials;
+}
+
+function showInitils() {
+    var userInitials = document.getElementById("user-initials").value;
+    document.getElementById("show").innerText = "Your Score Was " + userScore + submitUserName + userInitials;
 }
 
 //timer
@@ -142,4 +144,4 @@ function setTimer() {
 
 buttonStart.addEventListener("click", initiateQuiz);
 qsection.addEventListener("click", answerConfirm);
-submitUserName.addEventListener("click", finalScreen);
+//submitUserName.addEventListener("click", finalScreen);
