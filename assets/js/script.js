@@ -12,12 +12,11 @@ var answer2 = document.getElementById("answer2");
 var answer3 = document.getElementById("answer3");
 var answer4 = document.getElementById("answer4");
 var quizEnd = document.getElementById("quiz-end");
-//var userInitials = document.getElementById("user-initials");
 var questionContent = document.getElementById("question-content");
 var clock = document.getElementById("clock");
 var submitUserName = document.getElementById("submit-name");
+var finalScreenAndScore = document.getElementById("final-screen");
 var questionIndex;
-var userScore = document.getElementById("user-score");
 var secondsLeft = 40;
 
 
@@ -47,18 +46,7 @@ var questions = [
     }
 ];
 
-//start the quiz sections
-function initiateQuiz(event) {
-    start.style.disply = "none";
-    qsection.style.display = "block";
-    quizEnd.style.display = "none";
-    questionIndex = 0;
-    userScore = 0;
-    var timer = setTimer();
-    questionDisplay();
-    event.preventDefault();
-}
-
+// Start the quiz
 function questionForm(event) {
     start.style.disply = "none";
     qsection.style.display = "block";
@@ -104,6 +92,7 @@ function answerConfirm(event) {
         }
     }
 }
+
 //change display from questions to score
 function endGame() {
     start.style.display = "none";
@@ -112,19 +101,15 @@ function endGame() {
     event.preventDefault();
 }
 
-function finalScreen() {
-    start.style.display = "none";
-    qsection.style.display = "none";
-    userInitials.style.display = "block";
-    document.getElementById("user-score").textContent = submitUserName + userInitials + "Your Score Was " + userScore;
-    showInitils();
+function finalScreen(event) {
+    finalScreenAndScore.style.disply = "block";
+    quizEnd.style.display = "none";
+    var userInitials = document.getElementById("user-initials").value;
+    document.getElementById("show");
+    document.getElementById("user-score").textContent = userInitials + "Your Score Was " + userScore;
     event.preventDefault();
 }
-
-function showInitils() {
-    var userInitials = document.getElementById("user-initials").value;
-    document.getElementById("show").innerText = "Your Score Was " + userScore + submitUserName + userInitials;
-}
+ 
 
 //timer
 function setTimer() {
@@ -142,6 +127,6 @@ function setTimer() {
 
 
 
-buttonStart.addEventListener("click", initiateQuiz);
+buttonStart.addEventListener("click", questionForm);
 qsection.addEventListener("click", answerConfirm);
-//submitUserName.addEventListener("click", finalScreen);
+submitUserName.addEventListener("click", finalScreen);
