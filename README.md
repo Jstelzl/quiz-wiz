@@ -14,5 +14,10 @@
 ![Screenshot of completed projects](./assets/image-folder/quiz-wiz-pic-1.jpg)
 ![Screenshot of completed projects](./assets/image-folder/quiz-wiz-pic-2.jpg)
 
+
+# Link to webpage: 
+    https://jstelzl.github.io/quiz-wiz/
+
+
 # Author: 
     Made by Josiah S. Stelzl
